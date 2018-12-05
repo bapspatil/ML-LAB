@@ -6,9 +6,9 @@ import pandas as pd
 #import wrapt
 np.set_printoptions(threshold=np.nan) #see a whole array when we output it
 
-Cleveland_data_URL = 'http://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.hungarian.data'
+url = 'http://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.hungarian.data'
 names = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal', 'heartdisease']
-heartDisease = pd.read_csv(urlopen(Cleveland_data_URL), names = names) #gets Cleveland data
+heartDisease = pd.read_csv(urlopen(url), names = names) #gets Cleveland data
 heartDisease.head()
 print(heartDisease.head())
 
