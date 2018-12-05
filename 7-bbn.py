@@ -1,17 +1,17 @@
 import numpy as np
-from urllib.request import urlopen
+from urllib2.request import urlopen
 import matplotlib.pyplot as plt # Visuals
 import pandas as pd
 
-#import wrapt
-np.set_printoptions(threshold=np.nan) #see a whole array when we output it
+np.set_printoptions(threshold=np.nan)
 
 url = 'http://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.hungarian.data'
 names = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal', 'heartdisease']
-heartDisease = pd.read_csv(urlopen(url), names = names) #gets Cleveland data
+heartDisease = pd.read_csv(urlopen(url), names = names)
 heartDisease.head()
 print(heartDisease.head())
 
+# Delete COST
 del heartDisease['ca']
 del heartDisease['slope']
 del heartDisease['thal']
