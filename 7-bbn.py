@@ -26,11 +26,10 @@ from pgmpy.estimators import MaximumLikelihoodEstimator, BayesianEstimator
 model = BayesianModel([('age', 'trestbps'), ('age', 'fbs'), ('sex', 'trestbps'), ('sex', 'trestbps'), 
                        ('exang', 'trestbps'),('trestbps','heartdisease'),('fbs','heartdisease'),
                       ('heartdisease','restecg'),('heartdisease','thalach'),('heartdisease','chol')])
+                      
 # Learing CPDs using Maximum Likelihood Estimators
 model.fit(heartDisease, estimator=MaximumLikelihoodEstimator)
-#for cpd in model.get_cpds():
-#   print("CPD of {variable}:".format(variable=cpd.variable))
-#  print(cpd)
+
 print(model.get_cpds('age'))
 print(model.get_cpds('chol'))
 print(model.get_cpds('sex'))
