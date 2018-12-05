@@ -1,17 +1,21 @@
 import csv
 with open('trainingexamples.csv')  as csvFile:
     data = [tuple(line) for line in csv.reader(csvFile)]
+
 def Domain(): #All possible unique values an attribute/field can hold.
     D =[]
     for i in range(len(data[0])):
         D.append(list(set([ele[i] for ele in data])))
     return D
+
 D = Domain()
+
 def consistant(h1, h2):
     for x, y in zip(h1, h2):
         if not (x == "?" or (x != "ɸ" and (x == y or y == "ɸ"))):
             return False
     return True
+
 def candidate_elimination():
     G = {('?',)*(len(data[0]) - 1),}
     S = ['ɸ']*(len(data[0]) - 1)
@@ -46,4 +50,5 @@ def candidate_elimination():
                                  any([consistant(h, g1) for g1 in G if h != g1])])
         print("\n G[{0}]:".format(no), G)
         print("\n S[{0}]:".format(no), S)
+        
 candidate_elimination()

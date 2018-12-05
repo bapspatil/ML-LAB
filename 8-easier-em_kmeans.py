@@ -29,13 +29,14 @@ y_kmeans = kmeans.predict(X)
 plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=40, cmap='viridis')
 km = rename(y_kmeans)
 print("Accuracy KM : ",sm.accuracy_score(y,km))
+
 plt.show()
 
 # EM part
 from sklearn.mixture import GaussianMixture
+
 gmm = GaussianMixture(n_components=3)
 gmm.fit(X)
-
 y_kmeans = gmm.predict(X)
 plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=40, cmap='viridis')
 em = rename(y_kmeans)
