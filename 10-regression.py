@@ -1,10 +1,6 @@
 import numpy as np
-from bokeh.plotting import figure, show, output_notebook
+from bokeh.plotting import figure, show
 from bokeh.layouts import gridplot
-from bokeh.io import push_notebook
-
-#output_notebook()
-import numpy as np
 
 def local_regression(x0, X, Y, tau):
     # add bias term

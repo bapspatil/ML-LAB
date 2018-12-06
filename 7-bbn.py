@@ -28,7 +28,7 @@ model = BayesianModel([('age', 'trestbps'), ('age', 'fbs'), ('sex', 'trestbps'),
                        ('exang', 'trestbps'),('trestbps','heartdisease'),('fbs','heartdisease'),
                       ('heartdisease','restecg'),('heartdisease','thalach'),('heartdisease','chol')])
 
-# Learing CPDs using Maximum Likelihood Estimators
+# Learning CPDs using Maximum Likelihood Estimators
 model.fit(heartDisease, estimator=MaximumLikelihoodEstimator)
 
 print(model.get_cpds('age'))

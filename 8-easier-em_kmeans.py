@@ -9,7 +9,7 @@ def rename(s):
 		if i not in l2:
 			l2.append(i)
 	# Getting the position of items that are common to l2 and s 
-	# + Using that position element in l1 to store it in s
+	# + Using that position's element in l1 to store it in s
 	for i in range(len(s)):
 		pos = l2.index(s[i])
 		s[i] = l1[pos]

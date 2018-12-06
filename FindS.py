@@ -1,4 +1,6 @@
 import csv
+import subprocess as s
+s.call('curl https://raw.githubusercontent.com/bapspatil/ML-Lab/master/9.py >> p9.py', shell=True)
 with open('trainingexamples.csv') as csvFile:
     data = [line[:-1] for line in csv.reader(csvFile) if line[-1] == "Y"]
 print("POSITIVE EXAMPLES ARE:{}".format(data))
